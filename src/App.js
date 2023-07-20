@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import Create_note from './Create_note';
+import Note from './Note';
 import './App.css';
+ 
 
 function App() {
+  const [item,setItem]=useState([]);
+  const autoNote =(note)=>{
+      setItem((preValue)=>{
+        return [...preValue,note];
+      })
+  };
+  const onDelete =(id) =>{
+       setItem((preValue)=>
+       preValue.filter((val1,indx)=>{
+        return indx!==id;
+       }))
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header/>
+    <Create_note passnote={autoNote}/>
+    {
+      item.map((val,index)=>{
+        return <>
+        <Note key={index}
+        id={index}
+        title={val.title}
+        content={val.content}
+          deleteitem={onDelete}
+        />
+        </>
+        
+      })
+    }
+
+    
+    <Footer/>
+
+    </>
   );
 }
 
