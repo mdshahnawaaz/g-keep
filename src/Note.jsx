@@ -7,6 +7,9 @@ const Note =(props)=>{
     }
     return(
         <>
+        <div className="container-fluid nav_bg">
+        <div className="col-10 mx-auto">
+                
         <div className='note my_notes'> 
          <h1 className=''>{props.title}</h1>
          <p className=''>{props.content}</p>
@@ -14,6 +17,9 @@ const Note =(props)=>{
             <DeleteIcon className='deleteIcon'/>
          </Button>
         </div>
+        </div>
+        </div>
+        
         </>
     );
 }

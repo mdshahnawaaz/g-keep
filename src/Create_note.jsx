@@ -32,6 +32,9 @@ const Create_note =(props)=>{
     }
     return(
         <>
+        <div className="container-fluid nav_bg">
+            <div className="row">
+                <div className="col-10 mx-auto">
         <div className='main_note form' onDoubleClick={btoNormal}> 
         { expand ?
          <input type='text' 
@@ -56,6 +59,9 @@ const Create_note =(props)=>{
          </Button>:null
           }
          
+        </div>
+        </div>
+        </div>
         </div>
         </>
     );
