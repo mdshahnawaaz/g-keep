@@ -5,8 +5,8 @@ function Header() {
   return (
     <>
     <div className="container-fluid nav_bg">
-            <div className="row">
-                <div className="col-10 mx-auto">
+    <div className="row">
+    <div className="col-10 mx-auto">
       <div className='header'>
         <img src={logo}  alt="logo"  height="70"  width="50" className='img'/>
         <h1> Google Keep</h1>
